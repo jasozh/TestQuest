@@ -1,3 +1,1 @@
-<!DOCTYPE html>
-<html>
-</html>
+<?php include 'header.php'; ?>
