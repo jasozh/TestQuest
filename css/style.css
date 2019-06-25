@@ -1,0 +1,105 @@
+html {
+    background: #36454f;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: "Verdana", sans-serif;
+    line-height: 1.5;
+	margin: 0 auto 1em auto;
+    max-width: 55em;
+    padding: 1em 4em;
+    font-size: 16px;
+    background: white;
+}
+
+.content {
+	padding-top: 60px;
+}
+
+.image {
+	text-align: center;
+	transition: 1s;
+	width: 100%;
+	border-radius: 10px;
+}
+
+.image:hover {
+	filter: saturate(900%);
+	transition: 1s;
+	border-radius: 50%;
+}
+
+.image:active {
+	/* padding: 200px; */
+	transition: 0.2s;
+	width: 50px;
+}
+
+#logo {
+	opacity: 1;
+	transition: 0.2s;
+	border-radius: 50%;
+}
+
+#logo:hover {
+	opacity: 0.5;
+	transition: 0.2s;
+	border-radius: 10px;
+}
+
+#logo:active {
+	padding: 5px;
+	transition: 0.2s;
+}
+
+.nav-border {
+    margin: auto;
+}
+
+.navspace {
+	clear: both;
+}
+
+ul.nav {
+    position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    opacity: 0.95;
+    /* filter: blur(10px); */
+	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
+}
+
+li.nav {
+    float: left;
+    padding: 10px;
+}
+
+li.nav-list {
+	float: right;
+}
+
+li.nav-list a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 17px 20px 17px;
+    text-decoration: none;
+	transition: 0.2s;
+}
+
+/* Change the link color to #111 (black) on hover */
+li.nav-list a:hover {
+	background-color: #111;
+	padding-left: 30px;
+	padding-right: 30px;
+	transition: 0.2s;
+	text-decoration: bold;
+}

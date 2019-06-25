@@ -11,3 +11,11 @@
     <title>Quest to Test</title>
 </head>
 <body>
+    <ul class="nav">
+        <div class="nav-border">
+            <li class="nav"><img src="img/logo.png" alt="Logo" id="logo" height="40" href="#"></li>
+            <li class="nav-list"><a href="https://en.wikipedia.org/wiki/Special:Random">Random</a></li>
+            <li class="nav-list"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contact</a></li>
+            <li class="nav-list"><a href="about.html">About</a></li>
+            <li class="nav-list"><a href="home-redirect.html">Home</a></li>
+        </div>
