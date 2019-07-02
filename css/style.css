@@ -3,14 +3,18 @@ html {
     background-attachment: fixed;
 }
 
-.body {
+.content {
     font-family: "Verdana", sans-serif;
     line-height: 1.5;
-	margin: 0 auto 1em auto;
-    max-width: 70em;
-    padding: 4em 1em 1em 1em;
-    font-size: 16px;
-    background: white;
+	margin: 0 auto 0 auto;
+    max-width: 1200px;
+    padding: 24px 16px 16px 16px;
+}
+
+footer {
+	background-color: #0a2e52;
+	color: white;
+	font-size: 12px;
 }
 
 .front-image {
@@ -38,5 +42,11 @@ html {
 }
 
 #nav {
-	opacity: 0.95;
+	opacity: 0.9;
+	transition: 0.2s;
+}
+
+#nav:hover {
+	opacity: 1;
+	transition: 0.2s;
 }
