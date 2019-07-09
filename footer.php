@@ -1,8 +1,8 @@
 <footer>
-    <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
+    <div class='content'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-sm'>
                     <p> [32] But I must explain to you how all this mistaken idea of denouncing of a pleasure and
                         praising pain
                         was
@@ -29,7 +29,7 @@
                         resultant pleasure?
                     </p>
                 </div>
-                <div class="col-sm">
+                <div class='col-sm'>
                     <p>
                         [33] On the other hand, we denounce with righteous indignation and dislike men who are so
                         beguiled and

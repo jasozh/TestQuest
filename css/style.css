@@ -3,18 +3,27 @@ html {
     background-attachment: fixed;
 }
 
+footer {
+	background-color: #0a2e52;
+	color: white;
+	font-size: 12px;
+}
+
 .content {
     font-family: "Verdana", sans-serif;
     line-height: 1.5;
 	margin: 0 auto 0 auto;
     max-width: 1200px;
-    padding: 24px 16px 16px 16px;
+	padding: 24px 16px 16px 16px;
 }
 
-footer {
-	background-color: #0a2e52;
-	color: white;
-	font-size: 12px;
+.body {
+    font-family: "Verdana", sans-serif;
+    line-height: 1.5;
+	margin: 0 auto 0 auto;
+    max-width: 1200px;
+	padding: 100px 16px 16px 16px;
+	min-height: 600px;
 }
 
 .front-image {
