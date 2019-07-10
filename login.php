@@ -1,4 +1,10 @@
-<?php include 'header.php'; ?>
+<?php
+include 'header.php';
+
+if(!isset($_SESSION['login_error'])) {
+    $_SESSION['login_error'] = false;
+}
+?>
 
 <div class='body'>
     <div class='container'>
@@ -19,6 +25,18 @@
                         <button type='submit' class='btn btn-primary btn-block'>Login</button>
                     </div>
                 </form>
+                <form method='POST' action='forgotpassword.php'>
+                    <div class='form-group'>
+                        <button type='submit' action='forgotpassword.php' class='btn btn-danger btn-block'>Forgot
+                            Password</button>
+                    </div>
+                </form>
+                <?php
+                if($_SESSION['login_error'] == true) {
+                    echo "<div class='alert alert-danger'>Username or password incorrect.</div>";
+                    $_SESSION['login_error'] = false;
+                }
+                ?>
             </div>
             <div class='col-sm-4'></div>
         </div>
