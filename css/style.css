@@ -32,6 +32,10 @@ footer {
 	height: 500px;
 }
 
+form.inline {
+	display: inline;
+}
+
 #logo {
 	opacity: 1;
 	transition: 0.2s;

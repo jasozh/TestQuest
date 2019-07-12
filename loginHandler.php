@@ -4,7 +4,7 @@ include 'header.php';
 $user = $_POST['username'];
 $pass = $_POST['password'];
 
-$sql = "SELECT * FROM `user` WHERE user_name = '$user' AND `password` = '$pass'";
+$sql = "SELECT * FROM user WHERE `user_name` = '$user' AND `password` = '$pass'";
 
 $result = mysqli_query($con, $sql);
 if($row = mysqli_fetch_array($result)) {
