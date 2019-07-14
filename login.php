@@ -14,20 +14,15 @@ if(!isset($_SESSION['login_error'])) {
                 <form method='POST' action='loginHandler.php'>
                     <div class='form-group'>
                         <label>Username:</label>
-                        <input type='text' class='form-control' name='username' placeholder='Enter username' required>
+                        <input type='text' class='form-control' name='username' placeholder='Enter username'>
                     </div>
                     <div class='form-group'>
                         <label>Password:</label>
-                        <input type='password' class='form-control' name='password' placeholder='Enter password'
-                            required>
+                        <input type='password' class='form-control' name='password' placeholder='Enter password'>
                     </div>
                     <div class='form-group'>
                         <button type='submit' class='btn btn-primary btn-block'>Login</button>
-                    </div>
-                </form>
-                <form method='POST' action='forgotpassword.php'>
-                    <div class='form-group'>
-                        <button type='submit' action='forgotpassword.php' class='btn btn-danger btn-block'>Forgot
+                        <button type='submit' formaction='forgotpassword.php' class='btn btn-danger btn-block'>Forgot
                             Password</button>
                     </div>
                 </form>
