@@ -20,7 +20,7 @@ include 'conn.php';
 <body>
     <header>
         <nav class='navbar navbar-expand-sm bg-dark navbar-dark fixed-top' id='nav'>
-            <a class='navbar-brand' href='#'><img src='img/logo.png' alt='logo' id='logo'></a>
+            <div class='navbar-brand' href='#'><img src='img/logo.png' alt='logo' id='logo'></div>
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsiblenavbar'>
                 <span class='navbar-toggler-icon'></span>
             </button>
@@ -35,6 +35,7 @@ include 'conn.php';
                         ";
                     }
                     ?>
+                    <li class='nav-item nav-link'><?php printf("%s", mysqli_error($con)); ?></li>
                 </ul>
                 <ul class='navbar-nav'>
                     <?php

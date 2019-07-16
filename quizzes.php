@@ -47,7 +47,6 @@ $_SESSION['current_quiz_name'] = 0;
                 </form>
                 ";
             }
-            echo("Error: %s\n", mysqli_error($con));
             ?>
     </div>
 </div>
