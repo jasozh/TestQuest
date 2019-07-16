@@ -5,10 +5,6 @@ if(!isset($_SESSION['deleted_quiz'])) {
     $_SESSION['deleted_quiz'] = false;
 }
 
-if(!isset($_SESSION['updated_quiz'])) {
-    $_SESSION['updated_quiz'] = false;
-}
-
 if(!isset($_SESSION['added_quiz'])) {
     $_SESSION['added_quiz'] = false;
 }
@@ -47,10 +43,11 @@ $_SESSION['current_quiz_name'] = 0;
                     <input type='hidden' value='$quiz_id' name='quiz_id'>
                     <input type='hidden' value='$quiz_name' name='quiz_name'>
                     <button type='submit' name='edit' value='true' class='btn btn-primary'>Edit</button>
-                    <button type='submit' name='delete' value='true' formaction='deleteQuizHandler.php' class='btn btn-danger'>Delete</button>
+                    <button type='submit' name='deleteQuiz' value='true' formaction='editQuizHandler.php' class='btn btn-danger'>Delete</button>
                 </form>
                 ";
             }
+            echo("Error: %s\n", mysqli_error($con));
             ?>
     </div>
 </div>
