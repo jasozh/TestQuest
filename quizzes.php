@@ -1,31 +1,18 @@
-<?php
-include 'header.php';
-
-if(!isset($_SESSION['deleted_quiz'])) {
-    $_SESSION['deleted_quiz'] = false;
-}
-
-if(!isset($_SESSION['added_quiz'])) {
-    $_SESSION['added_quiz'] = false;
-}
-
-$_SESSION['current_quiz_id'] = 0;
-$_SESSION['current_quiz_name'] = 0;
-?>
+<?php include 'header.php'; ?>
 
 <div class='body'>
     <div class='container'>
         <?php
-            if($_SESSION['deleted_quiz'] == true) {
+            if(isset($_SESSION['deleted_quiz'])) {
                 echo "<div class='alert alert-danger'>Quiz deleted.</div>";
-                $_SESSION['deleted_quiz'] = false;
-            }
-
-            if($_SESSION['added_quiz'] == true) {
-                echo "<div class='alert alert-success'>Quiz added.</div>";
-                $_SESSION['added_quiz'] = false;
+                unset($_SESSION['deleted_quiz']);
             }
             
+            else if(isset($_SESSION['added_quiz'])) {
+                echo "<div class='alert alert-success'>Quiz added.</div>";
+                unset($_SESSION['added_quiz']);
+            }
+
             $sql = "SELECT * FROM quizzes";
             $result = mysqli_query($con, $sql);
 

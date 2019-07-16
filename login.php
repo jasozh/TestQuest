@@ -1,10 +1,4 @@
-<?php
-include 'header.php';
-
-if(!isset($_SESSION['login_error'])) {
-    $_SESSION['login_error'] = false;
-}
-?>
+<?php include 'header.php'; ?>
 
 <div class='body'>
     <div class='container'>
@@ -27,9 +21,9 @@ if(!isset($_SESSION['login_error'])) {
                     </div>
                 </form>
                 <?php
-                if($_SESSION['login_error'] == true) {
+                if(isset($_SESSION['login_error'])) {
                     echo "<div class='alert alert-danger'>Username or password incorrect.</div>";
-                    $_SESSION['login_error'] = false;
+                    unset($_SESSION['login_error']);
                 }
                 ?>
             </div>

@@ -1,33 +1,23 @@
-<?php
-include 'header.php';
-
-// Sets notification variables to false by default
-if(!isset($_SESSION['updated_quiz'])) {
-    $_SESSION['updated_quiz'] = false;
-}
-?>
+<?php include 'header.php'; ?>
 
 <div class='body'>
     <div class='container'>
         <?php
-            // Resets alerts to false
-            if($_SESSION['updated_quiz'] == true) {
+            // Resets alerts
+            if(isset($_SESSION['updated_quiz'])) {
                 echo "<div class='alert alert-success'>Quiz updated.</div>";
-                $_SESSION['updated_quiz'] = false;
+                unset($_SESSION['updated_quiz']);
             }
 
-            // Editing flashcards
-
-            // If user is coming from quizzes.php, retrieve form information. Otherwise, use stored session variables
+            // If user is coming from quizzes.php, change global quiz variable
             if(isset($_POST['edit'])) {
-                $quiz_id = $_POST['quiz_id'];
-                $quiz_name = $_POST['quiz_name'];
-                $_SESSION['current_quiz_id'] = $quiz_id;
-                $_SESSION['current_quiz_name'] = $quiz_name;
-            } else {
-                $quiz_id = $_SESSION['current_quiz_id'];
-                $quiz_name = $_SESSION['current_quiz_name'];
+                $_SESSION['current_quiz_id'] = $_POST['quiz_id'];
+                $_SESSION['current_quiz_name'] = $_POST['quiz_name'];
             }
+
+            $quiz_id = $_SESSION['current_quiz_id'];
+            $quiz_name = $_SESSION['current_quiz_name'];
+
             echo "$quiz_id $quiz_name";
             // Name update currently broken
             echo "
@@ -56,6 +46,7 @@ if(!isset($_SESSION['updated_quiz'])) {
                 </form>
                 ";
             }
+            printf("Error: %s\n", mysqli_error($con));
         ?>
     </div>
 </div>

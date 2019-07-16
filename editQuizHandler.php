@@ -5,12 +5,15 @@ if(isset($_POST['editQuiz'])) {
     $quiz_id = $_POST['quiz_id'];
     $quiz_name = $_POST['quiz_name'];
 
-    $sql = "UPDATE quizzes SET quiz_name = '$quiz_name' WHERE quiz_id = '$quiz_id";
+    $sql = "UPDATE quizzes SET quiz_name = '$quiz_name' WHERE quiz_id = '$quiz_id'";
     mysqli_query($con, $sql);
+
+    // Sets global quiz_name variable
+    $_SESSION['current_quiz_name'] = $quiz_name;
 
     // Sets notification and returns user to original page
     $_SESSION['updated_quiz'] = true;
-    header('Location: editQuiz.php')
+    header('Location: editQuiz.php');
 }
 
 else if(isset($_POST['editFlashcards'])) {
@@ -23,7 +26,7 @@ else if(isset($_POST['editFlashcards'])) {
 
     // Sets notification and returns user to original page
     $_SESSION['updated_quiz'] = true;
-    header('Location: editQuiz.php')
+    header('Location: editQuiz.php');
 }
 
 else if(isset($_POST['deleteQuiz'])) {
