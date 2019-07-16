@@ -34,7 +34,7 @@ if(!isset($_SESSION['updated_quiz'])) {
             <form action='editQuizHandler.php' method='POST'>
                 <input type='text' name='quiz_name' value='$quiz_name'>
                 <input type='hidden' name='quiz_id' value='$quiz_id'>
-                <button type='submit' name='changeName' value='true' class='btn btn-primary'>Update</button>
+                <button type='submit' name='editQuiz' value='true' class='btn btn-primary'>Update</button>
             </form>
             ";
 
@@ -48,11 +48,11 @@ if(!isset($_SESSION['updated_quiz'])) {
 
                 echo "
                 <br>
-                <form action='editFlashcardsHandler.php' method='POST'>
+                <form action='editQuizHandler.php' method='POST'>
                     <input type='text' name='question' value='$question'>
                     <input type='text' name='answer' value='$answer'>
                     <input type='text' name='flashcard_id' value='$flashcard_id'>
-                    <button type='submit' class='btn btn-primary'>Update</button>
+                    <button type='submit' name='editFlashcards' value='true' class='btn btn-primary'>Update</button>
                 </form>
                 ";
             }
