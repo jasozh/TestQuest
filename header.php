@@ -35,7 +35,6 @@ include 'conn.php';
                         ";
                     }
                     ?>
-                    <li class='nav-item nav-link'><?php printf("%s", mysqli_error($con)); ?></li>
                 </ul>
                 <ul class='navbar-nav'>
                     <?php
