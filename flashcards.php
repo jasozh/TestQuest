@@ -3,7 +3,7 @@
     <div class='container'>
         <?php
         $quiz_id = mysqli_real_escape_string($con, $_GET['quiz_id']);
-        $quiz_name = mysqli_real_escape_string($con, $_GET['quiz_name']);
+        $quiz_name = htmlspecialchars($_GET['quiz_name'], ENT_QUOTES);
 
         echo "<h1>$quiz_name</h1>";
         $sql = "SELECT * FROM flashcards WHERE `quiz_id` = '$quiz_id'";
