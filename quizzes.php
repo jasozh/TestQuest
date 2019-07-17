@@ -17,8 +17,8 @@
             $result = mysqli_query($con, $sql);
 
             while($row = mysqli_fetch_array($result)) {
-                $quiz_name = $row['quiz_name'];
-                $quiz_id = $row['quiz_id'];
+                $quiz_name = htmlspecialchars($row['quiz_name'], ENT_QUOTES);
+                $quiz_id = htmlspecialchars($row['quiz_id'], ENT_QUOTES);
 
                 echo "
                 <form action='flashcards.php' method='GET' class='inline'>                

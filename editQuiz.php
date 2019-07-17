@@ -11,8 +11,8 @@
 
             // If user is coming from quizzes.php, change global quiz variable
             if(isset($_GET['edit'])) {
-                $_SESSION['current_quiz_id'] = $_GET['quiz_id'];
-                $_SESSION['current_quiz_name'] = $_GET['quiz_name'];
+                $_SESSION['current_quiz_id'] = mysqli_real_escape_string($con, $_GET['quiz_id']);
+                $_SESSION['current_quiz_name'] = mysqli_real_escape_string($con, $_GET['quiz_name']);
             }
 
             // Local variables are always set to global ones
@@ -32,9 +32,9 @@
             $result = mysqli_query($con, $sql);
 
             while($row = mysqli_fetch_array($result)) {
-                $flashcard_id = $row['flashcard_id'];
-                $question = $row['question'];
-                $answer = $row['answer'];
+                $flashcard_id = htmlspecialchars($row['flashcard_id'], ENT_QUOTES);
+                $question = htmlspecialchars($row['question'], ENT_QUOTES);
+                $answer = htmlspecialchars($row['answer'], ENT_QUOTES);
 
                 // Edit flashcards
                 echo "

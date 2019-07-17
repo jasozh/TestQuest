@@ -1,8 +1,8 @@
 <?php
 include 'header.php';
 
-$user = $_POST['username'];
-$pass = $_POST['password'];
+$user = mysqli_real_escape_string($con, $_POST['username']);
+$pass = mysqli_real_escape_string($con, $_POST['password']);
 
 $sql = "SELECT * FROM user WHERE `user_name` = '$user' AND `password` = '$pass'";
 

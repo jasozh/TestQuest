@@ -2,17 +2,17 @@
 <div class='body'>
     <div class='container'>
         <?php
-        $quiz_id = $_GET['quiz_id'];
-        $quiz_name = $_GET['quiz_name'];
+        $quiz_id = mysqli_real_escape_string($con, $_GET['quiz_id']);
+        $quiz_name = mysqli_real_escape_string($con, $_GET['quiz_name']);
 
         echo "<h1>$quiz_name</h1>";
         $sql = "SELECT * FROM flashcards WHERE `quiz_id` = '$quiz_id'";
         $result = mysqli_query($con, $sql);
 
         while($row = mysqli_fetch_array($result)) {
-            $flashcard_id = $row['flashcard_id'];
-            $question = $row['question'];
-            $answer = $row['answer'];
+            $flashcard_id = htmlspecialchars($row['flashcard_id'], ENT_QUOTES);
+            $question = htmlspecialchars($row['question'], ENT_QUOTES);
+            $answer = htmlspecialchars($row['answer'], ENT_QUOTES);
 
             echo "
             <div class='row'>
