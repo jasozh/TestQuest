@@ -21,7 +21,7 @@
 
             // Edit quiz name
             echo "
-            <form action='editQuizHandler.php' method='GET'>
+            <form action='editQuizHandler.php' method='POST'>
                 <input type='text' name='quiz_name' value='$quiz_name'>
                 <input type='hidden' name='quiz_id' value='$quiz_id'>
                 <button type='submit' name='editQuiz' value='true' class='btn btn-primary'>Update</button>
@@ -39,7 +39,7 @@
                 // Edit flashcards
                 echo "
                 <br>
-                <form action='editQuizHandler.php' method='GET'>
+                <form action='editQuizHandler.php' method='POST'>
                     <input type='text' name='question' value='$question'>
                     <input type='text' name='answer' value='$answer'>
                     <input type='hidden' name='flashcard_id' value='$flashcard_id'>
@@ -51,7 +51,7 @@
 
             echo "
             <br>
-            <form action='editQuizHandler.php' method='GET'>
+            <form action='editQuizHandler.php' method='POST'>
                 <input type='text' name='question' placeholder='Enter question'>
                 <input type='text' name='answer' placeholder='Enter answer'>
                 <input type='hidden' name='quiz_id' value='$quiz_id'>
