@@ -2,9 +2,9 @@
 include 'header.php';
 
 // Edit quiz name
-if(isset($_POST['editQuiz'])) {
-    $quiz_id = $_POST['quiz_id'];
-    $quiz_name = $_POST['quiz_name'];
+if(isset($_GET['editQuiz'])) {
+    $quiz_id = $_GET['quiz_id'];
+    $quiz_name = $_GET['quiz_name'];
 
     $sql = "UPDATE quizzes SET quiz_name = '$quiz_name' WHERE quiz_id = '$quiz_id'";
     mysqli_query($con, $sql);
@@ -18,7 +18,7 @@ if(isset($_POST['editQuiz'])) {
 }
 
 // Add quiz
-else if(isset($_POST['addQuiz'])) {
+else if(isset($_GET['addQuiz'])) {
     $sql = "INSERT INTO quizzes (quiz_name) VALUES ('Untitled quiz')";
     mysqli_query($con, $sql);
 
@@ -28,9 +28,9 @@ else if(isset($_POST['addQuiz'])) {
 }
 
 // Delete quiz
-else if(isset($_POST['deleteQuiz'])) {
-    $quiz_id = $_POST['quiz_id'];
-    $quiz_name = $_POST['quiz_name'];
+else if(isset($_GET['deleteQuiz'])) {
+    $quiz_id = $_GET['quiz_id'];
+    $quiz_name = $_GET['quiz_name'];
     
     // Delete quiz entry
     $sql = "DELETE FROM quizzes WHERE quiz_id = '$quiz_id' AND quiz_name = '$quiz_name'";
@@ -46,10 +46,10 @@ else if(isset($_POST['deleteQuiz'])) {
 }
 
 // Edit flashcards
-else if(isset($_POST['editFlashcards'])) {
-    $question = $_POST['question'];
-    $answer = $_POST['answer'];
-    $flashcard_id = $_POST['flashcard_id'];
+else if(isset($_GET['editFlashcards'])) {
+    $question = $_GET['question'];
+    $answer = $_GET['answer'];
+    $flashcard_id = $_GET['flashcard_id'];
 
     $sql = "UPDATE flashcards SET question = '$question', answer = '$answer' WHERE flashcard_id = '$flashcard_id'";
     mysqli_query($con, $sql);
@@ -60,8 +60,8 @@ else if(isset($_POST['editFlashcards'])) {
 }
 
 // Delete flashcards
-else if(isset($_POST['deleteFlashcards'])) {
-    $flashcard_id = $_POST['flashcard_id'];
+else if(isset($_GET['deleteFlashcards'])) {
+    $flashcard_id = $_GET['flashcard_id'];
     $sql = "DELETE FROM flashcards WHERE flashcard_id = '$flashcard_id'";
     mysqli_query($con, $sql);
     
@@ -71,10 +71,10 @@ else if(isset($_POST['deleteFlashcards'])) {
 }
 
 // Add flashcards
-else if(isset($_POST['addFlashcards'])) {
-    $quiz_id = $_POST['quiz_id'];
-    $question = $_POST['question'];
-    $answer = $_POST['answer'];
+else if(isset($_GET['addFlashcards'])) {
+    $quiz_id = $_GET['quiz_id'];
+    $question = $_GET['question'];
+    $answer = $_GET['answer'];
 
     $sql = "INSERT INTO flashcards (quiz_id, question, answer) VALUES ('$quiz_id', '$question', '$answer')";
     mysqli_query($con, $sql);

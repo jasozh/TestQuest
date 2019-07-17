@@ -21,12 +21,12 @@
                 $quiz_id = $row['quiz_id'];
 
                 echo "
-                <form action='flashcards.php' method='POST' class='inline'>                
+                <form action='flashcards.php' method='GET' class='inline'>                
                     <input type='hidden' value='$quiz_id' name='quiz_id'>
                     <input type='hidden' value='$quiz_name' name='quiz_name'>
                     <button type='submit' class='jumbotron btn btn-warning'>$quiz_name</button>
                 </form>
-                <form action='editQuiz.php' method='POST' class='inline'>
+                <form action='editQuiz.php' method='GET' class='inline'>
                     <input type='hidden' value='$quiz_id' name='quiz_id'>
                     <input type='hidden' value='$quiz_name' name='quiz_name'>
                     <button type='submit' name='edit' value='true' class='btn btn-primary'>Edit</button>
@@ -36,7 +36,7 @@
             }
 
             echo "
-            <form action='editQuizHandler.php' method='POST' class='inline'>                
+            <form action='editQuizHandler.php' method='GET' class='inline'>                
                 <button type='submit' name='addQuiz' value='true' class='jumbotron btn btn-warning'>+ Add Quiz</button>
             </form>
             ";

@@ -10,9 +10,9 @@
             }
 
             // If user is coming from quizzes.php, change global quiz variable
-            if(isset($_POST['edit'])) {
-                $_SESSION['current_quiz_id'] = $_POST['quiz_id'];
-                $_SESSION['current_quiz_name'] = $_POST['quiz_name'];
+            if(isset($_GET['edit'])) {
+                $_SESSION['current_quiz_id'] = $_GET['quiz_id'];
+                $_SESSION['current_quiz_name'] = $_GET['quiz_name'];
             }
 
             // Local variables are always set to global ones
@@ -21,7 +21,7 @@
 
             // Edit quiz name
             echo "
-            <form action='editQuizHandler.php' method='POST'>
+            <form action='editQuizHandler.php' method='GET'>
                 <input type='text' name='quiz_name' value='$quiz_name'>
                 <input type='hidden' name='quiz_id' value='$quiz_id'>
                 <button type='submit' name='editQuiz' value='true' class='btn btn-primary'>Update</button>
@@ -39,7 +39,7 @@
                 // Edit flashcards
                 echo "
                 <br>
-                <form action='editQuizHandler.php' method='POST'>
+                <form action='editQuizHandler.php' method='GET'>
                     <input type='text' name='question' value='$question'>
                     <input type='text' name='answer' value='$answer'>
                     <input type='hidden' name='flashcard_id' value='$flashcard_id'>
@@ -51,7 +51,7 @@
 
             echo "
             <br>
-            <form action='editQuizHandler.php' method='POST'>
+            <form action='editQuizHandler.php' method='GET'>
                 <input type='text' name='question' placeholder='Enter question'>
                 <input type='text' name='answer' placeholder='Enter answer'>
                 <input type='hidden' name='quiz_id' value='$quiz_id'>

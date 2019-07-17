@@ -2,8 +2,8 @@
 <div class='body'>
     <div class='container'>
         <?php
-        $quiz_id = $_POST['quiz_id'];
-        $quiz_name = $_POST['quiz_name'];
+        $quiz_id = $_GET['quiz_id'];
+        $quiz_name = $_GET['quiz_name'];
 
         echo "<h1>$quiz_name</h1>";
         $sql = "SELECT * FROM flashcards WHERE `quiz_id` = '$quiz_id'";
