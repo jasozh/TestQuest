@@ -15,11 +15,11 @@
                 $_SESSION['current_quiz_name'] = $_POST['quiz_name'];
             }
 
+            // Local variables are always set to global ones
             $quiz_id = $_SESSION['current_quiz_id'];
             $quiz_name = $_SESSION['current_quiz_name'];
 
-            echo "$quiz_id $quiz_name";
-            // Name update currently broken
+            // Edit quiz name
             echo "
             <form action='editQuizHandler.php' method='POST'>
                 <input type='text' name='quiz_name' value='$quiz_name'>
@@ -36,16 +36,28 @@
                 $question = $row['question'];
                 $answer = $row['answer'];
 
+                // Edit flashcards
                 echo "
                 <br>
                 <form action='editQuizHandler.php' method='POST'>
                     <input type='text' name='question' value='$question'>
                     <input type='text' name='answer' value='$answer'>
-                    <input type='text' name='flashcard_id' value='$flashcard_id'>
+                    <input type='hidden' name='flashcard_id' value='$flashcard_id'>
                     <button type='submit' name='editFlashcards' value='true' class='btn btn-primary'>Update</button>
+                    <button type='submit' name='deleteFlashcards' value='true' class='btn btn-danger'>Delete</button>
                 </form>
                 ";
             }
+
+            echo "
+            <br>
+            <form action='editQuizHandler.php' method='POST'>
+                <input type='text' name='question' placeholder='Enter question'>
+                <input type='text' name='answer' placeholder='Enter answer'>
+                <input type='hidden' name='quiz_id' value='$quiz_id'>
+                <button type='submit' name='addFlashcards' value='true' class='btn btn-primary'>Add Flashcard</button>
+            </form>
+            ";
             printf("Error: %s\n", mysqli_error($con));
         ?>
     </div>

@@ -34,6 +34,12 @@
                 </form>
                 ";
             }
+
+            echo "
+            <form action='editQuizHandler.php' method='POST' class='inline'>                
+                <button type='submit' name='addQuiz' value='true' class='jumbotron btn btn-warning'>+ Add Quiz</button>
+            </form>
+            ";
             ?>
     </div>
 </div>

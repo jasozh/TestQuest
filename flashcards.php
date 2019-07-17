@@ -5,8 +5,7 @@
         $quiz_id = $_POST['quiz_id'];
         $quiz_name = $_POST['quiz_name'];
 
-        echo "$quiz_id $quiz_name";
-
+        echo "<h1>$quiz_name</h1>";
         $sql = "SELECT * FROM flashcards WHERE `quiz_id` = '$quiz_id'";
         $result = mysqli_query($con, $sql);
 
