@@ -18,26 +18,27 @@ include 'conn.php';
     <title>TestQuest</title>
 </head>
 <body>
-    <header>
-        <nav class='navbar navbar-expand-sm bg-dark navbar-dark fixed-top' id='nav'>
-            <div class='navbar-brand' href='#'><img src='img/logo.png' alt='logo' id='logo'></div>
-            <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsiblenavbar'>
-                <span class='navbar-toggler-icon'></span>
-            </button>
-            <div class='collapse navbar-collapse' id='collapsiblenavbar'>
-                <ul class='navbar-nav mr-auto'>
-                    <li class='nav-item'><a class='nav-link' href='index.php'>Home</a></li>
-                    <li class='nav-item'><a class='nav-link' href='about.php'>About</a></li>
-                    <?php
+    <article>
+        <header>
+            <nav class='navbar navbar-expand-sm bg-dark navbar-dark fixed-top' id='nav'>
+                <div class='navbar-brand' href='#'><img src='img/logo.png' alt='logo' id='logo'></div>
+                <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsiblenavbar'>
+                    <span class='navbar-toggler-icon'></span>
+                </button>
+                <div class='collapse navbar-collapse' id='collapsiblenavbar'>
+                    <ul class='navbar-nav mr-auto'>
+                        <li class='nav-item'><a class='nav-link' href='index.php'>Home</a></li>
+                        <li class='nav-item'><a class='nav-link' href='about.php'>About</a></li>
+                        <?php
                     if(isset($_SESSION['loggedin'])) {
                         echo "
                         <li class='nav-item'><a class='nav-link' href='quizzes.php'>Quizzes</a></li>                        
                         ";
                     }
                     ?>
-                </ul>
-                <ul class='navbar-nav'>
-                    <?php
+                    </ul>
+                    <ul class='navbar-nav'>
+                        <?php
                     if(isset($_SESSION['loggedin'])) {
                         $user = $_SESSION['username'];
                         echo "
@@ -51,7 +52,8 @@ include 'conn.php';
                         ";
                     }
                     ?>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>

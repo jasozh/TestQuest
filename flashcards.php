@@ -5,6 +5,19 @@
         $quiz_id = mysqli_real_escape_string($con, $_GET['quiz_id']);
         $quiz_name = htmlspecialchars($_GET['quiz_name'], ENT_QUOTES);
 
+        echo "
+        <form action='editQuiz.php' method='GET' class='inline'>
+            <input type='hidden' value='$quiz_id' name='quiz_id'>
+            <input type='hidden' value='$quiz_name' name='quiz_name'>
+            <button type='submit' name='edit' value='true' class='btn btn-primary'>Edit</button>
+        </form>
+        <form action='editQuizHandler.php' method='POST' class='inline'>
+            <input type='hidden' value='$quiz_id' name='quiz_id'>
+            <input type='hidden' value='$quiz_name' name='quiz_name'>
+            <button type='submit' name='deleteQuiz' value='true' class='btn btn-danger'>Delete</button>
+        </form>
+        ";
+
         echo "<h1>$quiz_name</h1>";
         $sql = "SELECT * FROM flashcards WHERE `quiz_id` = '$quiz_id'";
         $result = mysqli_query($con, $sql);

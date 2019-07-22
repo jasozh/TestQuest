@@ -3,62 +3,88 @@
 <div class='body'>
     <div class='container'>
         <?php
-            // Resets alerts
-            if(isset($_SESSION['updated_quiz'])) {
-                echo "<div class='alert alert-success'>Quiz updated.</div>";
-                unset($_SESSION['updated_quiz']);
-            }
+        // Resets alerts
+        if(isset($_SESSION['updated_quiz'])) {
+            echo "<div class='alert alert-success'>Quiz updated.</div>";
+            unset($_SESSION['updated_quiz']);
+        }
 
-            // If user is coming from quizzes.php, change global quiz variable
-            if(isset($_GET['edit'])) {
-                $_SESSION['current_quiz_id'] = mysqli_real_escape_string($con, $_GET['quiz_id']);
-                $_SESSION['current_quiz_name'] = mysqli_real_escape_string($con, $_GET['quiz_name']);
-            }
+        // If user is coming from flashcards.php, change global quiz variable
+        if(isset($_GET['edit'])) {
+            $_SESSION['current_quiz_id'] = mysqli_real_escape_string($con, $_GET['quiz_id']);
+            $_SESSION['current_quiz_name'] = mysqli_real_escape_string($con, $_GET['quiz_name']);
+        }
 
-            // Local variables are always set to global ones
-            $quiz_id = $_SESSION['current_quiz_id'];
-            $quiz_name = $_SESSION['current_quiz_name'];
+        // Local variables are always set to global ones
+        $quiz_id = $_SESSION['current_quiz_id'];
+        $quiz_name = $_SESSION['current_quiz_name'];
 
-            // Edit quiz name
-            echo "
-            <form action='editQuizHandler.php' method='POST'>
-                <input type='text' name='quiz_name' value='$quiz_name'>
-                <input type='hidden' name='quiz_id' value='$quiz_id'>
-                <button type='submit' name='editQuiz' value='true' class='btn btn-primary'>Update</button>
-            </form>
-            ";
+        // Edit quiz name
+        echo "
+        <form action='editQuizHandler.php' method='POST'>
+            <div class='row'>
+                <div class='col-sm-4'>
+                    <input type='text' class='form-control' name='quiz_name' value='$quiz_name'>
+                    <input type='hidden' name='quiz_id' value='$quiz_id'>
+                </div>
+                <div class='col-sm-2'>
+                    <button type='submit' name='editQuiz' value='true' class='btn btn-primary btn-block'>Update</button>
+                </div>
+            </div>
+        </form>
+        <br>
+        ";
 
-            $sql = "SELECT * FROM flashcards f, quizzes q WHERE f.quiz_id = '$quiz_id' AND q.quiz_id = '$quiz_id'";
-            $result = mysqli_query($con, $sql);
+        $sql = "SELECT * FROM flashcards f, quizzes q WHERE f.quiz_id = '$quiz_id' AND q.quiz_id = '$quiz_id'";
+        $result = mysqli_query($con, $sql);
 
-            while($row = mysqli_fetch_array($result)) {
-                $flashcard_id = htmlspecialchars($row['flashcard_id'], ENT_QUOTES);
-                $question = htmlspecialchars($row['question'], ENT_QUOTES);
-                $answer = htmlspecialchars($row['answer'], ENT_QUOTES);
+        while($row = mysqli_fetch_array($result)) {
+            $flashcard_id = htmlspecialchars($row['flashcard_id'], ENT_QUOTES);
+            $question = htmlspecialchars($row['question'], ENT_QUOTES);
+            $answer = htmlspecialchars($row['answer'], ENT_QUOTES);
 
-                // Edit flashcards
-                echo "
-                <br>
-                <form action='editQuizHandler.php' method='POST'>
-                    <input type='text' name='question' value='$question'>
-                    <input type='text' name='answer' value='$answer'>
-                    <input type='hidden' name='flashcard_id' value='$flashcard_id'>
-                    <button type='submit' name='editFlashcards' value='true' class='btn btn-primary'>Update</button>
-                    <button type='submit' name='deleteFlashcards' value='true' class='btn btn-danger'>Delete</button>
-                </form>
-                ";
-            }
-
+            // Edit flashcards
             echo "
             <br>
             <form action='editQuizHandler.php' method='POST'>
-                <input type='text' name='question' placeholder='Enter question'>
-                <input type='text' name='answer' placeholder='Enter answer'>
-                <input type='hidden' name='quiz_id' value='$quiz_id'>
-                <button type='submit' name='addFlashcards' value='true' class='btn btn-primary'>Add Flashcard</button>
+            <div class='row'>
+                <div class='col-sm-4'>
+                    <input type='text' class='form-control' name='question' value='$question'>
+                </div>
+                <div class='col-sm-4'>
+                    <input type='text' class='form-control' name='answer' value='$answer'>
+                    <input type='hidden' name='flashcard_id' value='$flashcard_id'>
+                </div>
+                <div class='col-sm-3'>
+                    <div class='btn-group btn-block'>
+                        <button type='submit' name='editFlashcards' value='true' class='btn btn-primary'>Update</button>
+                        <button type='submit' name='deleteFlashcards' value='true' class='btn btn-danger'>Delete</button>
+                    </div>
+                </div>
+            </div>
             </form>
             ";
-            printf("Error: %s\n", mysqli_error($con));
+        }
+
+        echo "
+        <br>
+        <form action='editQuizHandler.php' method='POST'>
+        <div class='row'>
+            <div class='col-sm-4'>
+                <input type='text' class='form-control' name='question' placeholder='Enter question'>
+            </div>
+            <div class='col-sm-4'>
+                <input type='text' class='form-control' name='answer' placeholder='Enter answer'>
+                <input type='hidden' name='quiz_id' value='$quiz_id'>
+            </div>
+            <div class='col-sm-3'>
+                <div class='btn-group btn-block'>
+                    <button type='submit' name='addFlashcards' value='true' class='btn btn-primary'>Insert</button>
+                    <button type='reset' class='btn btn-secondary'>Clear</button>
+                </div>
+            </div>
+        </form>
+        ";
         ?>
     </div>
 </div>

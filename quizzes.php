@@ -24,25 +24,14 @@
                 <form action='flashcards.php' method='GET' class='inline'>                
                     <input type='hidden' value='$quiz_id' name='quiz_id'>
                     <input type='hidden' value='$quiz_name' name='quiz_name'>
-                    <button type='submit' class='jumbotron btn btn-warning'>$quiz_name</button>
+                    <button type='submit' class='jumbotron quiz-card btn btn-light'>$quiz_name</button>
                 </form>
-                <form action='editQuiz.php' method='GET' class='inline'>
-                    <input type='hidden' value='$quiz_id' name='quiz_id'>
-                    <input type='hidden' value='$quiz_name' name='quiz_name'>
-                    <button type='submit' name='edit' value='true' class='btn btn-primary'>Edit</button>
-                </form>
-                <form action='editQuizHandler.php' method='POST' class='inline'>
-                    <input type='hidden' value='$quiz_id' name='quiz_id'>
-                    <input type='hidden' value='$quiz_name' name='quiz_name'>
-                    <button type='submit' name='deleteQuiz' value='true' class='btn btn-danger'>Delete</button>
-                </form>
-
                 ";
             }
 
             echo "
             <form action='editQuizHandler.php' method='POST' class='inline'>                
-                <button type='submit' name='addQuiz' value='true' class='jumbotron btn btn-warning'>+ Add Quiz</button>
+                <button type='submit' name='addQuiz' value='true' class='jumbotron quiz-card btn btn-success'>+ Add Quiz</button>
             </form>
             ";
             ?>
