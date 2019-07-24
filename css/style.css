@@ -26,6 +26,7 @@ footer {
 	font-size: 12px;
 }
 
+/* Main body styling */
 .content {
     font-family: "Verdana", sans-serif;
     line-height: 1.5;
@@ -40,9 +41,10 @@ footer {
 	margin: 0 auto 0 auto;
     max-width: 1200px;
 	padding: 100px 16px 16px 16px;
-	padding-bottom: 200px;
+	padding-bottom: 150px;
 	min-height: 600px;
 }
+/* END */
 
 .front-image {
 	object-fit: cover;
@@ -58,10 +60,19 @@ footer {
 	border: gray;
 }
 
-form.inline {
-	display: inline;
+/* Default expanding text area */
+textarea.expanding {
+	resize: none;
+	transition: all 0.2s;
+	height: 38px !IMPORTANT;
 }
 
+textarea.expanding:focus {
+	height: 6em !IMPORTANT;
+}
+/* END */
+
+/* Navbar stuff */
 #logo {
 	opacity: 1;
 	transition: 0.2s;
@@ -88,6 +99,11 @@ form.inline {
 #nav:hover {
 	opacity: 1;
 	transition: 0.2s;
+}
+/* END */
+
+form.inline {
+	display: inline;
 }
 
 button {

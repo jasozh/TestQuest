@@ -49,10 +49,10 @@
             <form action='editQuizHandler.php' method='POST'>
             <div class='row'>
                 <div class='col-sm-4'>
-                    <input type='text' class='form-control' name='question' value='$question' placeholder='Enter question'>
+                    <textarea rows='1' class='form-control expanding' name='question' placeholder='Enter question' required>$question</textarea>
                 </div>
                 <div class='col-sm-4'>
-                    <input type='text' class='form-control' name='answer' value='$answer' placeholder='Enter answer'>
+                    <textarea rows='1' class='form-control expanding' name='answer' placeholder='Enter answer' required>$answer</textarea>
                     <input type='hidden' name='flashcard_id' value='$flashcard_id'>
                 </div>
                 <div class='col-sm-3'>
@@ -71,10 +71,10 @@
         <form action='editQuizHandler.php' method='POST'>
         <div class='row'>
             <div class='col-sm-4'>
-                <input type='text' class='form-control' name='question' placeholder='Enter question'>
+                <textarea rows='1' class='form-control expanding' name='question' placeholder='Enter question' required></textarea>
             </div>
             <div class='col-sm-4'>
-                <input type='text' class='form-control' name='answer' placeholder='Enter answer'>
+                <textarea rows='1' class='form-control expanding' name='answer' placeholder='Enter answer' required></textarea>
                 <input type='hidden' name='quiz_id' value='$quiz_id'>
             </div>
             <div class='col-sm-3'>
