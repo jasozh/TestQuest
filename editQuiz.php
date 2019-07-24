@@ -24,7 +24,7 @@
         <form action='editQuizHandler.php' method='POST'>
             <div class='row'>
                 <div class='col-sm-4'>
-                    <input type='text' class='form-control' name='quiz_name' value='$quiz_name'>
+                    <input type='text' class='form-control' name='quiz_name' value='$quiz_name' placeholder='Enter quiz name'>
                     <input type='hidden' name='quiz_id' value='$quiz_id'>
                 </div>
                 <div class='col-sm-2'>
@@ -49,10 +49,10 @@
             <form action='editQuizHandler.php' method='POST'>
             <div class='row'>
                 <div class='col-sm-4'>
-                    <input type='text' class='form-control' name='question' value='$question'>
+                    <input type='text' class='form-control' name='question' value='$question' placeholder='Enter question'>
                 </div>
                 <div class='col-sm-4'>
-                    <input type='text' class='form-control' name='answer' value='$answer'>
+                    <input type='text' class='form-control' name='answer' value='$answer' placeholder='Enter answer'>
                     <input type='hidden' name='flashcard_id' value='$flashcard_id'>
                 </div>
                 <div class='col-sm-3'>
