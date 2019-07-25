@@ -18,7 +18,12 @@ $_SESSION['current_quiz_id'] = 0;
                 unset($_SESSION['added_quiz']);
             }
 
-            $sql = "SELECT * FROM quizzes";
+            if(isset($_SESSION['loggedin'])) {
+                $user = $_SESSION['username'];
+            } else {
+                echo "Nice try hacker.";
+            }
+            $sql = "SELECT * FROM quizzes WHERE user_name = '$user'";
             $result = mysqli_query($con, $sql);
 
             while($row = mysqli_fetch_array($result)) {
@@ -34,11 +39,13 @@ $_SESSION['current_quiz_id'] = 0;
                 ";
             }
 
-            echo "
-            <form action='editQuizHandler.php' method='POST' class='inline'>                
-                <button type='submit' name='addQuiz' value='true' class='jumbotron quiz-card btn btn-success'>+ Add Quiz</button>
-            </form>
-            ";
+            if(isset($_SESSION['loggedin'])) {
+                echo "
+                <form action='editQuizHandler.php' method='POST' class='inline'>                
+                    <button type='submit' name='addQuiz' value='true' class='jumbotron quiz-card btn btn-success'>+ Add Quiz</button>
+                </form>
+                ";
+            }
             ?>
     </div>
 </div>
