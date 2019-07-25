@@ -112,7 +112,7 @@
                 <br>
                 <div class='row'>
                     <div class='col-sm-5'>
-                        <div align='right'>$question</div>
+                        <label>$question</label>
                     </div>
                     <div class='col-sm-4'>
                         <textarea id='$flashcard_id' rows='1' class='form-control expanding' name='answer' placeholder='Enter answer' required></textarea>
