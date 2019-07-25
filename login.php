@@ -8,16 +8,17 @@
                 <form method='POST' action='loginHandler.php'>
                     <div class='form-group'>
                         <label>Username:</label>
-                        <input type='text' class='form-control' name='username' placeholder='Enter username'>
+                        <input type='text' class='form-control' name='username' placeholder='Enter username' required>
                     </div>
                     <div class='form-group'>
                         <label>Password:</label>
-                        <input type='password' class='form-control' name='password' placeholder='Enter password'>
+                        <input type='password' class='form-control' name='password' placeholder='Enter password'
+                            required>
                     </div>
                     <div class='form-group'>
                         <button type='submit' class='btn btn-primary btn-block'>Login</button>
-                        <button type='submit' formaction='forgotpassword.php' class='btn btn-danger btn-block'>Forgot
-                            Password</button>
+                        <a href='forgotpassword.php' class='btn btn-danger btn-block'>Forgot
+                            Password</a>
                     </div>
                 </form>
                 <?php
