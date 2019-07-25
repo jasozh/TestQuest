@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php
+include 'header.php';
+
+$_SESSION['current_quiz_id'] = 0;
+$_SESSION['current_quiz_id'] = 0;
+?>
 
 <div class='body'>
     <div class='container'>
@@ -24,7 +29,7 @@
                 <form action='flashcards.php' method='GET' class='inline'>                
                     <input type='hidden' value='$quiz_id' name='quiz_id'>
                     <input type='hidden' value='$quiz_name' name='quiz_name'>
-                    <button type='submit' class='jumbotron quiz-card btn btn-light'>$quiz_name</button>
+                    <button type='submit' name='flashcards' value='true' class='jumbotron quiz-card btn btn-light'>$quiz_name</button>
                 </form>
                 ";
             }

@@ -9,12 +9,6 @@
             unset($_SESSION['updated_quiz']);
         }
 
-        // If user is coming from flashcards.php, change global quiz variable
-        if(isset($_GET['edit'])) {
-            $_SESSION['current_quiz_id'] = mysqli_real_escape_string($con, $_GET['quiz_id']);
-            $_SESSION['current_quiz_name'] = mysqli_real_escape_string($con, $_GET['quiz_name']);
-        }
-
         // Local variables are always set to global ones
         $quiz_id = $_SESSION['current_quiz_id'];
         $quiz_name = $_SESSION['current_quiz_name'];
@@ -35,7 +29,7 @@
         <br>
         ";
 
-        $sql = "SELECT * FROM flashcards f, quizzes q WHERE f.quiz_id = '$quiz_id' AND q.quiz_id = '$quiz_id'";
+        $sql = "SELECT * FROM flashcards WHERE quiz_id = '$quiz_id'";
         $result = mysqli_query($con, $sql);
 
         while($row = mysqli_fetch_array($result)) {

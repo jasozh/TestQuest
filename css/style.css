@@ -32,7 +32,7 @@ footer {
     line-height: 1.5;
 	margin: 0 auto 0 auto;
     max-width: 1200px;
-	padding: 24px 16px 16px 16px;
+	padding: 24px 0px 16px 0px;
 }
 
 .body {
@@ -40,7 +40,7 @@ footer {
     line-height: 1.5;
 	margin: 0 auto 0 auto;
     max-width: 1200px;
-	padding: 100px 16px 16px 16px;
+	padding: 100px 0px 16px 0px;
 	padding-bottom: 150px;
 	min-height: 600px;
 }
