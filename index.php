@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 
-<img src='img/banner.jpg' class='front-image'>
+<img src='img/banner.png' class='front-image'>
 <div class='content'>
     <div class='container'>
         <div class='row'>
@@ -18,7 +18,7 @@
         </div>
     </div>
 </div>
-<img src='img/banner2.jpg' class='front-image'>
+<img src='img/banner.jpg' class='front-image'>
 <div class='content'>
     <div class='container'>
         <div class='row'>
